@@ -267,7 +267,7 @@ if (isset($_GET['logout'])) {
     <!-- En-tête hero avec parallax -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div
-            class="absolute inset-0 bg-[url('https://via.placeholder.com/1600x900')] bg-cover bg-center bg-fixed opacity-80">
+            class="absolute inset-0 bg-[url('{{ asset('/public/images/test.jpg') }}')] bg-cover bg-center bg-fixed opacity-80">
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
         <div class="z-10 text-center text-white px-6" data-aos="fade-up" data-aos-duration="1000">
@@ -313,7 +313,6 @@ if (isset($_GET['logout'])) {
                 </p>
             </div>
 
-            <!-- Filtres de catégories -->
             <div class="flex justify-center mb-12">
                 <div class="flex flex-wrap gap-4 justify-center">
                     <button
@@ -335,7 +334,6 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <!-- Entrées -->
             <div class="category-section mb-16" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="text-2xl font-serif font-semibold mb-8 flex items-center">
                     <span class="w-8 h-1 bg-restaurant-gold mr-3"></span>
@@ -366,7 +364,6 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <!-- Plats -->
             <div class="category-section mb-16" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="text-2xl font-serif font-semibold mb-8 flex items-center">
                     <span class="w-8 h-1 bg-restaurant-gold mr-3"></span>
@@ -397,7 +394,6 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
 
-            <!-- Desserts -->
             <div class="category-section mb-8" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="text-2xl font-serif font-semibold mb-8 flex items-center">
                     <span class="w-8 h-1 bg-restaurant-gold mr-3"></span>
@@ -676,88 +672,7 @@ if (isset($_GET['logout'])) {
     <!-- Footer -->
     <footer class="bg-restaurant-dark text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
-            <div class="w-full md:w-1/4 mb-8">
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="text-restaurant-gold text-2xl">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-serif font-bold">Le Bon Goût</h1>
-                        <p class="text-xs text-restaurant-gold font-script">Restaurant Gastronomique</p>
-                    </div>
-                </div>
-                <p class="text-gray-400 mb-4">
-                    Une cuisine d'exception pour des moments inoubliables dans un cadre élégant au cœur de Paris.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">
-                        <i class="fab fa-tripadvisor"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="w-full md:w-1/4 mb-8">
-                <h3 class="text-lg font-serif font-semibold mb-4">Liens Rapides</h3>
-                <ul class="space-y-2">
-                    <li><a href="#menu"
-                            class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">Menu</a>
-                    </li>
-                    <li><a href="#about"
-                            class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">À
-                            Propos</a></li>
-                    <li><a href="#contact"
-                            class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">Réservations</a>
-                    </li>
-                    <li><a href="#"
-                            class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">Événements
-                            Privés</a></li>
-                    <li><a href="#"
-                            class="text-gray-400 hover:text-restaurant-gold transition-colors duration-300">Galerie
-                            Photos</a></li>
-                </ul>
-            </div>
-
-            <div class="w-full md:w-1/4 mb-8">
-                <h3 class="text-lg font-serif font-semibold mb-4">Informations</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-restaurant-gold"></i>
-                        <span class="text-gray-400">15 Rue du Restaurant<br>75008 Paris, France</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-phone-alt mr-3 text-restaurant-gold"></i>
-                        <span class="text-gray-400">+33 (0)1 23 45 67 89</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-envelope mr-3 text-restaurant-gold"></i>
-                        <span class="text-gray-400">contact@lebongout.fr</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="w-full md:w-1/4 mb-8">
-                <h3 class="text-lg font-serif font-semibold mb-4">Newsletter</h3>
-                <p class="text-gray-400 mb-4">
-                    Inscrivez-vous pour recevoir nos offres spéciales et actualités.
-                </p>
-                <form class="flex">
-                    <input type="email" placeholder="Votre email" class="px-4 py-2 w-full focus:outline-none">
-                    <button type="submit"
-                        class="bg-restaurant-gold text-restaurant-dark px-4 hover:bg-opacity-80 transition-colors duration-300">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div> -->
+        </div>
 
         <div class="pt-8 mt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
             <p>&copy; <?= date('Y') ?> Le Bon Goût - Restaurant Gastronomique. Tous droits réservés.</p>
@@ -781,7 +696,7 @@ if (isset($_GET['logout'])) {
             </div>
             <?php endif; ?>
 
-            <form method="post" action="/login">
+            <form method="post" action="{{ route('login') }}">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="login-email">Email</label>
@@ -831,7 +746,7 @@ if (isset($_GET['logout'])) {
             </div>
             <?php endif; ?>
 
-            <form method="post" action="/register">
+            <form method="POST" action="{{ route('regist') }}">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="register-name">Nom complet</label>
