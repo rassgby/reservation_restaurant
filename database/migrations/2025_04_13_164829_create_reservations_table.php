@@ -9,15 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->time('heure');
-            $table->integer('nombre_personnes');
-            $table->string('status'); // 'en attente', 'confirmée', 'annulée'
-            $table->foreignId('client_id')->constrained('users');
+            $table->string('heure');
+            $table->string('nombre_personnes');
+            $table->text('special_requests')->nullable();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
+            $table->string('status')->default('confirmed');
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

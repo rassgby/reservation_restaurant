@@ -6,7 +6,7 @@ session_start();
 
 // Configuration de la connexion à la base de données
 $host = 'localhost';
-$dbname = 'laravel';
+$dbname = 'laravele';
 $username = 'root';
 $password = '';
 

@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminController;
 
 // Page d'accueil publique
 Route::get('/', fn() => view('welcome'));
+Route::get('/test', fn() => view('test'));
 
 // Routes générales nécessitant l'authentification
 Route::middleware('auth')->group(function () {
@@ -62,6 +63,7 @@ Route::middleware('auth')->group(function () {
 // -----------------------------
 // Module CLIENT2
 // -----------------------------
+
 Route::middleware(['auth'])->prefix('client')->name('client.')->group(function(){
     // Page Réserver
     Route::get('/reservation', function(){
@@ -70,6 +72,7 @@ Route::middleware(['auth'])->prefix('client')->name('client.')->group(function()
 
     // Traitement de la réservation
     Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+
 
     // Page Vérifier Disponibilités
     Route::get('/availability', function(){
@@ -81,7 +84,7 @@ Route::middleware(['auth'])->prefix('client')->name('client.')->group(function()
 
     // Page Historique
     Route::get('/history', function(){
-        $reservations = \App\Models\Reservation::where('client_id', auth()->id())
+        $reservations = \App\Models\Reservation::where('user_id', auth()->id())
                             ->orderBy('date', 'desc')
                             ->orderBy('heure', 'asc')
                             ->get();
@@ -146,4 +149,5 @@ Route::post('/users/{user}/toggle', [\App\Http\Controllers\AdminController::clas
          ->name('users.toggle');
 
 });
+
 require __DIR__.'/auth.php';

@@ -1,8 +1,1 @@
-<html>
-    <head>
-        <title>Test</title>
-    </head>
-    <body>
-        <h1>Test reussi</h1>
-    </body>
-</html>
+console.log("Hello World");
